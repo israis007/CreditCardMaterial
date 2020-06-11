@@ -1,0 +1,3 @@
+include ':MaterialCreditCard'
+include ':app'
+rootProject.name = "CreditCardMaterial"
