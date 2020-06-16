@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="StrokeCard">3sp</dimen>
+    <dimen name="NoDimen">0sp</dimen>
+    <dimen name="ChipMarginStart">6sp</dimen>
+    <dimen name="ChipMarginBottom">10sp</dimen>
+    <dimen name="ChipWidth">4sp</dimen>
+    <dimen name="ChipHeight">4sp</dimen>
+    <dimen name="BrandTypeMarginStart">6sp</dimen>
+    <dimen name="BrandTypeMarginTop">2sp</dimen>
+    <dimen name="BrandTypeWidth">4sp</dimen>
+    <dimen name="BrandTypeHeight">2sp</dimen>
+    <dimen name="BrandBankMarginStart">6sp</dimen>
+    <dimen name="BrandBankMarginTop">2sp</dimen>
+    <dimen name="BrandBankWidth">12sp</dimen>
+    <dimen name="BrandBankHeight">6sp</dimen>
+    <dimen name="NumberTextSize">14sp</dimen>
+    <dimen name="NumberMarginStart">6sp</dimen>
+    <dimen name="NumberMarginEnd">6sp</dimen>
+    <dimen name="NumberMarginBottom">12sp</dimen>
+    <dimen name="NameTextSize">9sp</dimen>
+    <dimen name="NameMarginStart"></dimen>
 </resources>

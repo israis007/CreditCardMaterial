@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="CardNumber">5221567898765432</string>
+    <string name="CardDateMask">mm/yy</string>
+    <string name="CardName">Pirata Ram</string>
+    <string name="ClientSince">2016</string>
+</resources>

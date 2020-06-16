@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="CardBackground">#ffffff</color>
+    <color name="NumberColor">#000000</color>
 </resources>

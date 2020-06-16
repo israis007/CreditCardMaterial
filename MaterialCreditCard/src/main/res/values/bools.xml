@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="ShowNumber">true</bool>
+    <bool name="ShowName">true</bool>
+    <bool name="ShowDate">true</bool>
+</resources>

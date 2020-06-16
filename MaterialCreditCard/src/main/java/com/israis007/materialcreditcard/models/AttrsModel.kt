@@ -1,7 +1,7 @@
 package com.israis007.materialcreditcard.models
 
+import android.graphics.Typeface
 import android.graphics.drawable.Drawable
-import android.graphics.fonts.Font
 import androidx.annotation.ColorInt
 
 data class AttrsModel (
@@ -34,7 +34,7 @@ data class AttrsModel (
     var BrandBankHeight: Float,
     var BrandBankWidth: Float,
     var NumberText: String,
-    var NumberTextFont: Font,
+    var NumberTextFont: Typeface,
     var NumberTextSize: Float,
     @ColorInt
     var NumberTextColor: Int,
@@ -50,7 +50,7 @@ data class AttrsModel (
     var NumberHeight: Float,
     var NumberWidth: Float,
     var NameText: String,
-    var NameTextFont: Font,
+    var NameTextFont: Typeface,
     var NameTextSize: Float,
     @ColorInt
     var NameTextColor: Int,
@@ -64,7 +64,7 @@ data class AttrsModel (
     var NameHeight: Float,
     var NameWidth: Float,
     var DateText: String,
-    var DateTextFont: Font,
+    var DateTextFont: Typeface,
     var DateTextSize: Float,
     @ColorInt
     var DateTextColor: Int,
@@ -78,7 +78,7 @@ data class AttrsModel (
     var DateHeight: Float,
     var DateWidth: Float,
     var ClientSinceText: String,
-    var ClientSinceTextFont: Font,
+    var ClientSinceTextFont: Typeface,
     var ClientSinceTextSize: Float,
     @ColorInt
     var ClientSinceTextColor: Int,
@@ -101,7 +101,7 @@ data class AttrsModel (
     var SignHeight: Float,
     var SignWidth: Float,
     var SecurityCodeText: String,
-    var SecurityCodeFont: Font,
+    var SecurityCodeFont: Typeface,
     var SecurityCodeTextSize: Float,
     @ColorInt
     var SecurityCodeTextColor: Int,

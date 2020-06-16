@@ -3,4 +3,13 @@
     <integer name="CardType">0</integer>
     <integer name="CardBrandLogo">0</integer>
     <integer name="ChipLocation">1</integer>
+    <integer name="BrandTypeLocation">1</integer>
+    <integer name="BrandBankLocation">0</integer>
+    <integer name="NumberTextMaskLength">12</integer>
+    <integer name="NumberSide">0</integer>
+    <integer name="NameSide">0</integer>
+    <integer name="DateSide">0</integer>
+    <integer name="NumberLocation">2</integer>
+    <integer name="NameLocation">2</integer>
+    <integer name="DateLocation">2</integer>
 </resources>
