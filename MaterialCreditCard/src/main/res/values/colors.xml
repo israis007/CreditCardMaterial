@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="CardBackground">#ffffff</color>
+    <color name="CardBackground">#D2DADADA</color>
     <color name="NumberColor">#000000</color>
+    <color name="Gray">#404040</color>
+    <color name="Gray_Light">#878787</color>
 </resources>

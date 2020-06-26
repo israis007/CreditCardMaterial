@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/Gray_Light" />
+    <gradient android:startColor="@color/CardBackground" android:endColor="@color/Gray_Light" android:angle="180" android:useLevel="true" android:type="linear" />
+</shape>

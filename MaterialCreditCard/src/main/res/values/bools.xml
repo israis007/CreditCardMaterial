@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <bool name="ShowNumber">true</bool>
-    <bool name="ShowName">true</bool>
-    <bool name="ShowDate">true</bool>
+    <bool name="numberShow">true</bool>
+    <bool name="nameShow">true</bool>
+    <bool name="dateShow">true</bool>
+    <bool name="signShow">true</bool>
+    <bool name="chipShow">true</bool>
+    <bool name="securityCodeShow">true</bool>
+    <bool name="clientSinceShow">true</bool>
+    <bool name="brandTypeShow">true</bool>
+    <bool name="brandBankShow">true</bool>
+    <bool name="dateTextShow">true</bool>
 </resources>

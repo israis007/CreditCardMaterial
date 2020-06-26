@@ -21,6 +21,13 @@
         <enum name="Discovery" value="7" />
         <enum name="UnionPay" value="8" />
     </attr>
+    <!-- Card Default Drawables -->
+    <attr name="DefaultDrawableMasterCard" format="reference" />
+    <attr name="DefaultDrawableVISA" format="reference" />
+    <attr name="DefaultDrawableAmericanExpress" format="reference" />
+    <attr name="DefaultDrawableDiscovery" format="reference" />
+    <attr name="DefaultDrawableUnionPay" format="reference" />
+    <attr name="DefaultDrawableUnknown" format="reference" />
     <!-- Card Drawables -->
     <attr name="CardFrontBackground" format="reference" />
     <attr name="CardBackBackground" format="reference" />
@@ -38,6 +45,7 @@
     <attr name="ChipMarginBottom" format="dimension" />
     <attr name="ChipHeight" format="dimension" />
     <attr name="ChipWidth" format="dimension" />
+    <attr name="ChipShow" format="boolean" />
     <!-- Brand Type Attrs -->
     <attr name="BrandTypeDrawable" format="reference" />
     <attr name="BrandTypeLocation" format="enum">
@@ -52,6 +60,7 @@
     <attr name="BrandTypeMarginBottom" format="dimension" />
     <attr name="BrandTypeHeight" format="dimension" />
     <attr name="BrandTypeWidth" format="dimension" />
+    <attr name="BrandTypeShow" format="boolean" />
     <!-- Brand Bank Attrs -->
     <attr name="BrandBankDrawable" format="reference" />
     <attr name="BrandBankLocation" format="enum">
@@ -66,6 +75,7 @@
     <attr name="BrandBankMarginBottom" format="dimension" />
     <attr name="BrandBankHeight" format="dimension" />
     <attr name="BrandBankWidth" format="dimension" />
+    <attr name="BrandBankShow" format="boolean" />
     <!-- Number Attrs -->
     <attr name="NumberText" format="string" />
     <attr name="NumberTextFont" format="reference" />
@@ -78,7 +88,6 @@
         <enum name="MiddleDot" value="3" />
     </attr>
     <attr name="NumberTextMaskLength" format="integer" />
-    <attr name="NumberShow" format="boolean" />
     <attr name="NumberSide" format="enum" >
         <enum name="Front" value="0" />
         <enum name="Back" value="1" />
@@ -89,12 +98,19 @@
         <enum name="RightTop" value="2" />
         <enum name="RightBottom" value="3" />
     </attr>
+    <attr name="NumberTextSeparator" format="enum">
+        <enum name="None" value="0" />
+        <enum name="Slash" value="1" />
+        <enum name="Space" value="2" />
+        <enum name="Hyphen" value="3" />
+    </attr>
     <attr name="NumberMarginStart" format="dimension" />
     <attr name="NumberMarginTop" format="dimension" />
     <attr name="NumberMarginEnd" format="dimension" />
     <attr name="NumberMarginBottom" format="dimension" />
     <attr name="NumberHeight" format="dimension" />
     <attr name="NumberWidth" format="dimension" />
+    <attr name="NumberShow" format="boolean" />
     <!-- Name Attrs -->
     <attr name="NameText" format="string" />
     <attr name="NameTextFont" format="reference" />
@@ -110,13 +126,13 @@
         <enum name="RightTop" value="2" />
         <enum name="RightBottom" value="3" />
     </attr>
-    <attr name="NameShow" format="boolean" />
     <attr name="NameMarginStart" format="dimension" />
     <attr name="NameMarginTop" format="dimension" />
     <attr name="NameMarginEnd" format="dimension" />
     <attr name="NameMarginBottom" format="dimension" />
     <attr name="NameHeight" format="dimension" />
     <attr name="NameWidth" format="dimension" />
+    <attr name="NameShow" format="boolean" />
     <!-- Expiration Date Attrs -->
     <attr name="DateText" format="string" />
     <attr name="DateTextFont" format="reference" />
@@ -127,6 +143,7 @@
         <enum name="Front" value="0" />
         <enum name="Back" value="1" />
     </attr>
+    <attr name="DateTextShow" format="boolean" />
     <attr name="DateLocation" format="enum">
         <enum name="LeftTop" value="0" />
         <enum name="LeftBottom" value="1" />
@@ -139,6 +156,7 @@
     <attr name="DateMarginBottom" format="dimension" />
     <attr name="DateHeight" format="dimension" />
     <attr name="DateWidth" format="dimension" />
+    <attr name="DateShow" format="boolean" />
     <!-- Date Client Since Attrs -->
     <attr name="ClientSinceText" format="string" />
     <attr name="ClientSinceTextFont" format="reference" />
@@ -160,8 +178,9 @@
     <attr name="ClientSinceMarginBottom" format="dimension" />
     <attr name="ClientSinceHeight" format="dimension" />
     <attr name="ClientSinceWidth" format="dimension" />
+    <attr name="ClientSinceShow" format="boolean" />
     <!-- Magnetic Band Attrs -->
-    <attr name="MagneticBandDrawable" format="reference" />
+    <attr name="MagneticStripeDrawable" format="reference" />
     <!-- Sign Attrs -->
     <attr name="SignDrawable" format="reference" />
     <attr name="SignLocation" format="enum">
@@ -189,11 +208,17 @@
         <enum name="RightBottom" value="3" />
         <enum name="EndSignDrawable" value="4" />
     </attr>
-
+    <attr name="SecurityCodeShow" format="boolean" />
     <!-- Style for Credit Card View -->
     <declare-styleable name="SingleCreditCard">
         <attr name="CardType" />
         <attr name="CardBrandLogo" />
+        <attr name="DefaultDrawableMasterCard" />
+        <attr name="DefaultDrawableVISA" />
+        <attr name="DefaultDrawableAmericanExpress" />
+        <attr name="DefaultDrawableDiscovery" />
+        <attr name="DefaultDrawableUnionPay" />
+        <attr name="DefaultDrawableUnknown" />
         <attr name="CardFrontBackground" />
         <attr name="CardBackBackground" />
         <attr name="ChipIcon" />
@@ -204,6 +229,7 @@
         <attr name="ChipMarginBottom" />
         <attr name="ChipHeight" />
         <attr name="ChipWidth" />
+        <attr name="ChipShow" />
         <attr name="BrandTypeDrawable" />
         <attr name="BrandTypeLocation" />
         <attr name="BrandTypeMarginStart" />
@@ -212,6 +238,7 @@
         <attr name="BrandTypeMarginBottom" />
         <attr name="BrandTypeHeight" />
         <attr name="BrandTypeWidth" />
+        <attr name="BrandTypeShow" />
         <attr name="BrandBankDrawable" />
         <attr name="BrandBankLocation" />
         <attr name="BrandBankMarginStart" />
@@ -220,39 +247,42 @@
         <attr name="BrandBankMarginBottom" />
         <attr name="BrandBankHeight" />
         <attr name="BrandBankWidth" />
+        <attr name="BrandBankShow" />
         <attr name="NumberText" />
         <attr name="NumberTextFont" />
         <attr name="NumberTextSize" />
         <attr name="NumberTextColor" />
         <attr name="NumberTextMask" />
         <attr name="NumberTextMaskLength" />
-        <attr name="NumberShow" />
         <attr name="NumberSide" />
         <attr name="NumberLocation" />
+        <attr name="NumberTextSeparator" />
         <attr name="NumberMarginStart" />
         <attr name="NumberMarginTop" />
         <attr name="NumberMarginEnd" />
         <attr name="NumberMarginBottom" />
         <attr name="NumberHeight" />
         <attr name="NumberWidth" />
+        <attr name="NumberShow" />
         <attr name="NameText" />
         <attr name="NameTextFont" />
         <attr name="NameTextSize" />
         <attr name="NameTextColor" />
         <attr name="NameSide" />
         <attr name="NameLocation" />
-        <attr name="NameShow" />
         <attr name="NameMarginStart" />
         <attr name="NameMarginTop" />
         <attr name="NameMarginEnd" />
         <attr name="NameMarginBottom" />
         <attr name="NameHeight" />
         <attr name="NameWidth" />
+        <attr name="NameShow" />
         <attr name="DateText" />
         <attr name="DateTextFont" />
         <attr name="DateTextSize" />
         <attr name="DateTextColor" />
         <attr name="DateTextFormat" />
+        <attr name="DateTextShow" />
         <attr name="DateSide" />
         <attr name="DateLocation" />
         <attr name="DateMarginStart" />
@@ -261,6 +291,7 @@
         <attr name="DateMarginBottom" />
         <attr name="DateHeight" />
         <attr name="DateWidth" />
+        <attr name="DateShow" />
         <attr name="ClientSinceText" />
         <attr name="ClientSinceTextFont" />
         <attr name="ClientSinceTextSize" />
@@ -273,20 +304,22 @@
         <attr name="ClientSinceMarginBottom" />
         <attr name="ClientSinceHeight" />
         <attr name="ClientSinceWidth" />
-        <attr name="MagneticBandDrawable" />
+        <attr name="ClientSinceShow" />
+        <attr name="MagneticStripeDrawable" />
         <attr name="SignDrawable" />
         <attr name="SignLocation" />
         <attr name="SignMarginStart" />
         <attr name="SignMarginTop" />
         <attr name="SignMarginEnd" />
         <attr name="SignMarginBottom" />
-        <attr name="SignShow" />
         <attr name="SignHeight" />
         <attr name="SignWidth" />
+        <attr name="SignShow" />
         <attr name="SecurityCodeText" />
         <attr name="SecurityCodeFont" />
         <attr name="SecurityCodeTextSize" />
         <attr name="SecurityCodeTextColor" />
         <attr name="SecurityCodeLocation" />
+        <attr name="SecurityCodeShow" />
     </declare-styleable>
 </resources>
