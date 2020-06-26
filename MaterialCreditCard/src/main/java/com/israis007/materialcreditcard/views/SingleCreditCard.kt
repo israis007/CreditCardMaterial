@@ -30,8 +30,10 @@ class SingleCreditCard @JvmOverloads constructor(
     private lateinit var numberTV: AppCompatTextView
     private lateinit var nameTV: AppCompatTextView
     private lateinit var dateTV: AppCompatTextView
+    lateinit var constraintLayout: ConstraintLayout
 
     init {
+        setBackgroundColor(Color.LTGRAY)
         context.withStyledAttributes(
             attrs,
             R.styleable.SingleCreditCard,
@@ -40,7 +42,7 @@ class SingleCreditCard @JvmOverloads constructor(
         ){
             val resources = context.resources
             val theme = context.theme
-
+            setBackgroundColor(Color.LTGRAY)
             attrsModel = AttrsModel(
                 CardType = AttrsModel.getCardType(getInt(R.styleable.SingleCreditCard_CardType, resources.getInteger(R.integer.CardType))),
                 CardBrandLogo = AttrsModel.getCardBrandLogo(getInt(R.styleable.SingleCreditCard_CardType, resources.getInteger(R.integer.CardBrandLogo))),
@@ -155,18 +157,19 @@ class SingleCreditCard @JvmOverloads constructor(
             )
         }
 
+        invalidate()
         drawCard()
-
+        requestLayout()
     }
 
     private fun drawCard(){
-        val conLayout = ConstraintLayout(context)
+        constraintLayout = ConstraintLayout(context)
         val rootLp= ConstraintLayout.LayoutParams (
             ConstraintLayout.LayoutParams.MATCH_PARENT,
             ConstraintLayout.LayoutParams.MATCH_PARENT
         )
-        conLayout.id = View.generateViewId()
-        conLayout.layoutParams = rootLp
+        constraintLayout.id = View.generateViewId()
+        constraintLayout.layoutParams = rootLp
         radius = context.resources.getDimension(R.dimen.RadiusCard)
         background = attrsModel.CardFrontBackground
 
@@ -186,7 +189,7 @@ class SingleCreditCard @JvmOverloads constructor(
             imageBrand.layoutParams = brandLp
             Glide.with(context).load(attrsModel.BrandBankDrawable).centerInside().fitCenter()
                 .into(imageBrand)
-            conLayout.addView(imageBrand)
+            constraintLayout.addView(imageBrand)
         }
 
         /* Add Chip */
@@ -203,7 +206,7 @@ class SingleCreditCard @JvmOverloads constructor(
             applyRules(attrsModel.ChipLocation, chipLp)
             imageChip.layoutParams = chipLp
             Glide.with(context).load(attrsModel.ChipIcon).centerInside().fitCenter().into(imageChip)
-            conLayout.addView(imageChip)
+            constraintLayout.addView(imageChip)
         }
 
         /* Add Brand Type */
@@ -221,7 +224,7 @@ class SingleCreditCard @JvmOverloads constructor(
             applyRules(attrsModel.BrandTypeLocation, typeBrandLp)
             brandIV.layoutParams = typeBrandLp
             reDrawBrandLogo()
-            conLayout.addView(brandIV)
+            constraintLayout.addView(brandIV)
         }
 
         /* Add Number Card View */
@@ -252,7 +255,7 @@ class SingleCreditCard @JvmOverloads constructor(
             numberTV.typeface = attrsModel.NumberTextFont
             numberTV.text = CreditCardUtils.formatCardNumber(attrsModel.NumberText, attrsModel.Separator, attrsModel.NumberTextMask, attrsModel.NumberTextMaskLength)
             numberTV.gravity = Gravity.CENTER
-            conLayout.addView(numberTV)
+            constraintLayout.addView(numberTV)
         }
 
         /* Add Name View */
@@ -274,7 +277,7 @@ class SingleCreditCard @JvmOverloads constructor(
             nameTV.typeface = attrsModel.NameTextFont
             nameTV.text = attrsModel.NameText
             nameTV.gravity = Gravity.START
-            conLayout.addView(nameTV)
+            constraintLayout.addView(nameTV)
         }
 
         /* Add Date Expiration View */
@@ -296,7 +299,7 @@ class SingleCreditCard @JvmOverloads constructor(
             dateTV.typeface = attrsModel.DateTextFont
             dateTV.text = attrsModel.DateText
             dateTV.gravity = Gravity.CENTER
-            conLayout.addView(dateTV)
+            constraintLayout.addView(dateTV)
         }
 
         /* Add Member Since View */
@@ -318,11 +321,10 @@ class SingleCreditCard @JvmOverloads constructor(
             clientTV.typeface = attrsModel.ClientSinceTextFont
             clientTV.text = attrsModel.ClientSinceText
             clientTV.gravity = Gravity.CENTER
-            conLayout.addView(clientTV)
+            constraintLayout.addView(clientTV)
         }
 
-        this@SingleCreditCard.addView(conLayout)
-
+        this@SingleCreditCard.addView(constraintLayout)
     }
 
     private fun getSizeInt(size: Float) =
@@ -408,12 +410,6 @@ class SingleCreditCard @JvmOverloads constructor(
 
         if (canvas == null)
             return
-
-//        val paint = Paint()
-//        paint.color = ContextCompat.getColor(context, R.color.CardBackground)
-//        canvas.drawRect(0f, 0f, 250f, 250f, paint)
-
-        drawCard()
 
     }
 }
