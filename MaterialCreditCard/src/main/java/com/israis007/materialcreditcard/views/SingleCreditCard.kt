@@ -399,6 +399,15 @@ class SingleCreditCard @JvmOverloads constructor(
         Glide.with(context).load(AttrsModel.getLogoBrandByCardType(attrsModel.CardType)).centerInside().fitCenter().error(R.drawable.ic_money).into(brandIV)
     }
 
+    fun setAttrs(attrsModel: AttrsModel){
+        this.attrsModel = attrsModel
+        invalidate()
+        drawCard()
+        requestLayout()
+    }
+
+    fun getAttrsModel() = this.attrsModel
+
     fun changeTypeBrand(cardType: CardType){
         attrsModel.CardType = cardType
         reDrawBrandLogo()
